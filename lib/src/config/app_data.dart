@@ -1,5 +1,6 @@
 import 'package:greengrocer/src/models/cart_item_model.dart';
 import 'package:greengrocer/src/models/item_model.dart';
+import 'package:greengrocer/src/models/order_model.dart';
 import 'package:greengrocer/src/models/user_model.dart';
 
 ItemModel apple = ItemModel(
@@ -32,7 +33,7 @@ ItemModel guava = ItemModel(
 ItemModel kiwi = ItemModel(
   itemName: 'Kiwi',
   imgUrl: 'assets/fruits/kiwi.png',
-  unit: 'kg',
+  unit: 'un',
   price: 2.5,
   description:
       'The best kiwi in the region and the best price of any grocery store. This item has essential vitamins for strengthening the body, resulting in a healthy life.',
@@ -41,7 +42,7 @@ ItemModel kiwi = ItemModel(
 ItemModel mango = ItemModel(
   itemName: 'Mango',
   imgUrl: 'assets/fruits/mango.png',
-  unit: 'kg',
+  unit: 'un',
   price: 2.5,
   description:
       'The best mango in the region and the best price of any grocery store. This item has essential vitamins for strengthening the body, resulting in a healthy life.',
@@ -95,3 +96,29 @@ UserModel user = UserModel(
   cpf: '999.999.999-99',
   password: '',
 );
+
+List<OrderModel> orders = [
+  OrderModel(
+    id: 'qwe123asd456',
+    createdDateTime: DateTime.parse('2024-01-29 09:17:33.843'),
+    overdueDateTime: DateTime.parse('2025-01-29 10:17:33.843'),
+    items: [
+      CartItemModel(item: apple, quantity: 2),
+      CartItemModel(item: mango, quantity: 2),
+    ],
+    status: 'pending_payment',
+    copyAndPaste: 'q1w2e3r4t5',
+    total: 11.0,
+  ),
+  OrderModel(
+    id: 'zxc456vbn123',
+    createdDateTime: DateTime.parse('2024-01-29 10:14:45.177'),
+    overdueDateTime: DateTime.parse('2025-01-29 11:14:45.177'),
+    items: [
+      CartItemModel(item: guava, quantity: 1),
+    ],
+    status: 'delivered',
+    copyAndPaste: 'q1w2e3r4t5',
+    total: 11.5,
+  ),
+];
